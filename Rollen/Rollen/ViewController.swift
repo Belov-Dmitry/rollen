@@ -8,10 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private lazy var tempLabel: UILabel = {
+        let element = UILabel()
+        element.text = "Hellow World"
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        
+        view.addSubview(tempLabel)
+        NSLayoutConstraint.activate([
+            tempLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+            tempLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            tempLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 20)
+        ])
+        tempLabel.font = .systemFont(ofSize: 40, weight: UIFont.Weight(rawValue: 20))
+        
     }
 
  
