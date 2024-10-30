@@ -28,6 +28,7 @@
 		F431613F2CD2B04D00A6BFA8 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F43161362CD2B04D00A6BFA8 /* OFL.txt */; };
 		F43161402CD2B04D00A6BFA8 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F43161372CD2B04D00A6BFA8 /* README.txt */; };
 		F43161412CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */; };
+		F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		F43161362CD2B04D00A6BFA8 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		F43161372CD2B04D00A6BFA8 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F43161232CD02B1900A6BFA8 /* UIColor+RGBandHEX.swift */,
+				F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				F43161262CD02DFE00A6BFA8 /* SignInViewController.swift in Sources */,
 				F43161052CCC3BF400A6BFA8 /* ViewController.swift in Sources */,
 				F431612C2CD02E4900A6BFA8 /* CartViewController.swift in Sources */,
+				F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */,
 				F431611F2CD027EF00A6BFA8 /* TabBarController.swift in Sources */,
 				F431612E2CD02E7100A6BFA8 /* SideMenuViewController.swift in Sources */,
 				F43161212CD0289B00A6BFA8 /* OnboardingViewController.swift in Sources */,
