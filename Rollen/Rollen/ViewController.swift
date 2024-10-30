@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .accentBlue
         
         view.addSubview(tempLabel)
         NSLayoutConstraint.activate([
@@ -27,7 +27,8 @@ class ViewController: UIViewController {
             tempLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             tempLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 20)
         ])
-        tempLabel.font = .Sen.bold.size(of: 20)
+        tempLabel.font = .Sen.bold.size(of: 40)
+        tempLabel.textColor = .accentYellow
         
     }
 
