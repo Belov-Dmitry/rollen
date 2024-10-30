@@ -20,6 +20,15 @@
 		F431612A2CD02E3B00A6BFA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161292CD02E3B00A6BFA8 /* MainViewController.swift */; };
 		F431612C2CD02E4900A6BFA8 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431612B2CD02E4900A6BFA8 /* CartViewController.swift */; };
 		F431612E2CD02E7100A6BFA8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431612D2CD02E7100A6BFA8 /* SideMenuViewController.swift */; };
+		F431613A2CD2B04D00A6BFA8 /* Sen-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161302CD2B04D00A6BFA8 /* Sen-Bold.ttf */; };
+		F431613B2CD2B04D00A6BFA8 /* Sen-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161312CD2B04D00A6BFA8 /* Sen-ExtraBold.ttf */; };
+		F431613C2CD2B04D00A6BFA8 /* Sen-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161322CD2B04D00A6BFA8 /* Sen-Medium.ttf */; };
+		F431613D2CD2B04D00A6BFA8 /* Sen-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161332CD2B04D00A6BFA8 /* Sen-Regular.ttf */; };
+		F431613E2CD2B04D00A6BFA8 /* Sen-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161342CD2B04D00A6BFA8 /* Sen-SemiBold.ttf */; };
+		F431613F2CD2B04D00A6BFA8 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F43161362CD2B04D00A6BFA8 /* OFL.txt */; };
+		F43161402CD2B04D00A6BFA8 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F43161372CD2B04D00A6BFA8 /* README.txt */; };
+		F43161412CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */; };
+		F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +47,15 @@
 		F43161292CD02E3B00A6BFA8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F431612B2CD02E4900A6BFA8 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		F431612D2CD02E7100A6BFA8 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		F43161302CD2B04D00A6BFA8 /* Sen-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-Bold.ttf"; sourceTree = "<group>"; };
+		F43161312CD2B04D00A6BFA8 /* Sen-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F43161322CD2B04D00A6BFA8 /* Sen-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-Medium.ttf"; sourceTree = "<group>"; };
+		F43161332CD2B04D00A6BFA8 /* Sen-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-Regular.ttf"; sourceTree = "<group>"; };
+		F43161342CD2B04D00A6BFA8 /* Sen-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-SemiBold.ttf"; sourceTree = "<group>"; };
+		F43161362CD2B04D00A6BFA8 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		F43161372CD2B04D00A6BFA8 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +100,7 @@
 		F43161142CCC3E6C00A6BFA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F431612F2CD2B02400A6BFA8 /* Fonts */,
 				F43161092CCC3BF500A6BFA8 /* Assets.xcassets */,
 				F431610B2CCC3BF500A6BFA8 /* LaunchScreen.storyboard */,
 				F431610E2CCC3BF500A6BFA8 /* Info.plist */,
@@ -172,8 +191,40 @@
 			isa = PBXGroup;
 			children = (
 				F43161232CD02B1900A6BFA8 /* UIColor+RGBandHEX.swift */,
+				F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F431612F2CD2B02400A6BFA8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F43161392CD2B04D00A6BFA8 /* Sen */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F43161352CD2B04D00A6BFA8 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				F43161302CD2B04D00A6BFA8 /* Sen-Bold.ttf */,
+				F43161312CD2B04D00A6BFA8 /* Sen-ExtraBold.ttf */,
+				F43161322CD2B04D00A6BFA8 /* Sen-Medium.ttf */,
+				F43161332CD2B04D00A6BFA8 /* Sen-Regular.ttf */,
+				F43161342CD2B04D00A6BFA8 /* Sen-SemiBold.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		F43161392CD2B04D00A6BFA8 /* Sen */ = {
+			isa = PBXGroup;
+			children = (
+				F43161352CD2B04D00A6BFA8 /* static */,
+				F43161362CD2B04D00A6BFA8 /* OFL.txt */,
+				F43161372CD2B04D00A6BFA8 /* README.txt */,
+				F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */,
+			);
+			path = Sen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +285,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F431613D2CD2B04D00A6BFA8 /* Sen-Regular.ttf in Resources */,
+				F43161402CD2B04D00A6BFA8 /* README.txt in Resources */,
+				F431613C2CD2B04D00A6BFA8 /* Sen-Medium.ttf in Resources */,
+				F431613E2CD2B04D00A6BFA8 /* Sen-SemiBold.ttf in Resources */,
+				F43161412CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf in Resources */,
 				F431610A2CCC3BF500A6BFA8 /* Assets.xcassets in Resources */,
+				F431613B2CD2B04D00A6BFA8 /* Sen-ExtraBold.ttf in Resources */,
+				F431613A2CD2B04D00A6BFA8 /* Sen-Bold.ttf in Resources */,
+				F431613F2CD2B04D00A6BFA8 /* OFL.txt in Resources */,
 				F431610D2CCC3BF500A6BFA8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +308,7 @@
 				F43161262CD02DFE00A6BFA8 /* SignInViewController.swift in Sources */,
 				F43161052CCC3BF400A6BFA8 /* ViewController.swift in Sources */,
 				F431612C2CD02E4900A6BFA8 /* CartViewController.swift in Sources */,
+				F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */,
 				F431611F2CD027EF00A6BFA8 /* TabBarController.swift in Sources */,
 				F431612E2CD02E7100A6BFA8 /* SideMenuViewController.swift in Sources */,
 				F43161212CD0289B00A6BFA8 /* OnboardingViewController.swift in Sources */,
