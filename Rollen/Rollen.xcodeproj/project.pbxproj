@@ -30,6 +30,14 @@
 		F43161412CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */; };
 		F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */; };
 		F43161452CD2BC2900A6BFA8 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161442CD2BC2900A6BFA8 /* AppColors.swift */; };
+		F43161482CD3FE8900A6BFA8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161472CD3FE8900A6BFA8 /* AppCoordinator.swift */; };
+		F431614A2CD3FEAD00A6BFA8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161492CD3FEAD00A6BFA8 /* Coordinator.swift */; };
+		F431614C2CD41C2900A6BFA8 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431614B2CD41C2900A6BFA8 /* OnboardingCoordinator.swift */; };
+		F431614E2CD424F800A6BFA8 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431614D2CD424F800A6BFA8 /* SignInCoordinator.swift */; };
+		F43161502CD4250B00A6BFA8 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431614F2CD4250B00A6BFA8 /* ProfileCoordinator.swift */; };
+		F43161522CD4251C00A6BFA8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161512CD4251C00A6BFA8 /* MainCoordinator.swift */; };
+		F43161542CD4252C00A6BFA8 /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161532CD4252C00A6BFA8 /* CartCoordinator.swift */; };
+		F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +66,14 @@
 		F43161382CD2B04D00A6BFA8 /* Sen-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sen-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extention.swift"; sourceTree = "<group>"; };
 		F43161442CD2BC2900A6BFA8 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		F43161472CD3FE8900A6BFA8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F43161492CD3FEAD00A6BFA8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F431614B2CD41C2900A6BFA8 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		F431614D2CD424F800A6BFA8 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		F431614F2CD4250B00A6BFA8 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
+		F43161512CD4251C00A6BFA8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F43161532CD4252C00A6BFA8 /* CartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
+		F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +106,7 @@
 		F43160FF2CCC3BF400A6BFA8 /* Rollen */ = {
 			isa = PBXGroup;
 			children = (
+				F43161462CD3FE5100A6BFA8 /* Coordinators */,
 				F43161222CD02A4500A6BFA8 /* Helpers */,
 				F43161162CD0216500A6BFA8 /* Modules */,
 				F43161152CCC3EB500A6BFA8 /* App */,
@@ -230,6 +247,21 @@
 			path = Sen;
 			sourceTree = "<group>";
 		};
+		F43161462CD3FE5100A6BFA8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F43161472CD3FE8900A6BFA8 /* AppCoordinator.swift */,
+				F43161492CD3FEAD00A6BFA8 /* Coordinator.swift */,
+				F431614B2CD41C2900A6BFA8 /* OnboardingCoordinator.swift */,
+				F431614D2CD424F800A6BFA8 /* SignInCoordinator.swift */,
+				F431614F2CD4250B00A6BFA8 /* ProfileCoordinator.swift */,
+				F43161512CD4251C00A6BFA8 /* MainCoordinator.swift */,
+				F43161532CD4252C00A6BFA8 /* CartCoordinator.swift */,
+				F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,16 +342,24 @@
 			files = (
 				F43161262CD02DFE00A6BFA8 /* SignInViewController.swift in Sources */,
 				F43161052CCC3BF400A6BFA8 /* ViewController.swift in Sources */,
+				F431614A2CD3FEAD00A6BFA8 /* Coordinator.swift in Sources */,
 				F431612C2CD02E4900A6BFA8 /* CartViewController.swift in Sources */,
 				F43161452CD2BC2900A6BFA8 /* AppColors.swift in Sources */,
 				F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */,
 				F431611F2CD027EF00A6BFA8 /* TabBarController.swift in Sources */,
+				F43161482CD3FE8900A6BFA8 /* AppCoordinator.swift in Sources */,
+				F431614E2CD424F800A6BFA8 /* SignInCoordinator.swift in Sources */,
 				F431612E2CD02E7100A6BFA8 /* SideMenuViewController.swift in Sources */,
 				F43161212CD0289B00A6BFA8 /* OnboardingViewController.swift in Sources */,
 				F43161012CCC3BF400A6BFA8 /* AppDelegate.swift in Sources */,
 				F43161032CCC3BF400A6BFA8 /* SceneDelegate.swift in Sources */,
 				F431612A2CD02E3B00A6BFA8 /* MainViewController.swift in Sources */,
+				F43161542CD4252C00A6BFA8 /* CartCoordinator.swift in Sources */,
+				F43161522CD4251C00A6BFA8 /* MainCoordinator.swift in Sources */,
+				F431614C2CD41C2900A6BFA8 /* OnboardingCoordinator.swift in Sources */,
+				F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */,
 				F43161282CD02E2A00A6BFA8 /* ProfileViewController.swift in Sources */,
+				F43161502CD4250B00A6BFA8 /* ProfileCoordinator.swift in Sources */,
 				F43161242CD02B1900A6BFA8 /* UIColor+RGBandHEX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
