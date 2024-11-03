@@ -38,6 +38,7 @@
 		F43161522CD4251C00A6BFA8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161512CD4251C00A6BFA8 /* MainCoordinator.swift */; };
 		F43161542CD4252C00A6BFA8 /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161532CD4252C00A6BFA8 /* CartCoordinator.swift */; };
 		F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */; };
+		F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		F43161512CD4251C00A6BFA8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F43161532CD4252C00A6BFA8 /* CartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
 		F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				F43161202CD0289B00A6BFA8 /* OnboardingViewController.swift */,
+				F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				F431614C2CD41C2900A6BFA8 /* OnboardingCoordinator.swift in Sources */,
 				F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */,
 				F43161282CD02E2A00A6BFA8 /* ProfileViewController.swift in Sources */,
+				F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */,
 				F43161502CD4250B00A6BFA8 /* ProfileCoordinator.swift in Sources */,
 				F43161242CD02B1900A6BFA8 /* UIColor+RGBandHEX.swift in Sources */,
 			);

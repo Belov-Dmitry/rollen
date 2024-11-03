@@ -8,13 +8,18 @@
 import UIKit
 
 class OnboardingCoordinator: Coordinator {
-    
     override func start() {
-        let vc = OnboardingViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        showOnboarding()
     }
-    
-    
-    
+    override func finish() {
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    }
 }
 
+private extension OnboardingCoordinator {
+    func showOnboarding() {
+        let viewModel = OnboardingViewModel(coordinator: self)
+        let vc = OnboardingViewController(viewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
