@@ -9,8 +9,9 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
+    var viewModel: (OnboardingFinishDelegate)?
+    
     // MARK: - UI Elements
-
     private let gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
         layer.colors = [
@@ -23,7 +24,7 @@ class OnboardingViewController: UIViewController {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logoCircle")
+        imageView.image = UIImage(named: "LogoCircle")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -62,8 +63,18 @@ class OnboardingViewController: UIViewController {
         return button
     }()
     
-    // MARK: - Lifecycle
+    // MARK: - init
+    init(viewModel: OnboardingFinishDelegate? = nil) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -84,10 +95,17 @@ class OnboardingViewController: UIViewController {
         view.addSubview(descriptionLabel)
         view.addSubview(startButton)
         
-        //        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
-        //
+        startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+        
         setupConstraints()
     }
+    
+    @objc private func startButtonTapped() {
+        viewModel?.onboardingFinish()
+    }
+    
+    
+    
     
     private func setupConstraints() {
         
