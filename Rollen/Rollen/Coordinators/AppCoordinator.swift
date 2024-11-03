@@ -8,10 +8,15 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-     
+    
+    private let userStorage = UserStorage.shared
+    
     override func start() {
-        showOnboardingFlow()
-        //ShowMainFlow()
+        if userStorage.isOnboardingPassed {
+            ShowMainFlow()
+        } else {
+            showOnboardingFlow()
+        }
     }
     
 }
