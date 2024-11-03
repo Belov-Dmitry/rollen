@@ -13,6 +13,7 @@ protocol OnboardingFinishDelegate: AnyObject {
 
 class OnboardingViewModel: OnboardingFinishDelegate {
     weak var coordinator: OnboardingCoordinator?
+    private let userStorage = UserStorage.shared
     
     init(coordinator: OnboardingCoordinator? = nil) {
         self.coordinator = coordinator
@@ -22,6 +23,7 @@ class OnboardingViewModel: OnboardingFinishDelegate {
     
     
     func onboardingFinish() {
+        userStorage.isOnboardingPassed = true
         coordinator?.finish()
     }
     
