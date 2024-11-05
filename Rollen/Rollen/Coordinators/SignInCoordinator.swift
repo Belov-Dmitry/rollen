@@ -10,10 +10,16 @@ import UIKit
 class SignInCoordinator: Coordinator {
     
     override func start() {
-        let vc = SignInViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        showSignIn()
     }
-    
-    
-    
+    override func finish() {
+        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
+    }
+}
+
+private extension SignInCoordinator {
+    func showSignIn() {
+        let signInViewController = ModuleFactory.makeSignIn(coordinator: self)
+        navigationController?.pushViewController(signInViewController, animated: true)
+    }
 }

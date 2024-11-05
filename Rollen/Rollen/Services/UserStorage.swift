@@ -11,8 +11,8 @@ class UserStorage {
     
     static let shared = UserStorage()
     
-    var isOnboardingPassed: Bool {
-        get { UserDefaults.standard.bool(forKey: "isOnboardingPassed") }
-        set { UserDefaults.standard.set(newValue, forKey: "isOnboardingPassed") }
+    var isOnboardingComplete: Bool {
+        get { UserDefaults.standard.bool(forKey: UserDefaultsKey.isOnboardingComplete) }
+        set { UserDefaults.standard.set(newValue, forKey: UserDefaultsKey.isOnboardingComplete) }
     }
 }

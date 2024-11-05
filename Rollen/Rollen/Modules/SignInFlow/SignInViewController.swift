@@ -8,13 +8,28 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    
+    var viewModel: (SignInFinishDelegate)?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
+    
+    // MARK: - init
+    init(viewModel: SignInFinishDelegate? = nil) {
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
 
-
+    // MARK: - Setup UI
+    
+    private func setupUI() {
+        view.backgroundColor = .red
+    }
 }
