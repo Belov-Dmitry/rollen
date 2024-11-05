@@ -10,9 +10,10 @@ import UIKit
 class AppCoordinator: Coordinator {
     
     private let userStorage = UserStorage.shared
+    private let factory = ModuleFactory.self
     
     override func start() {
-        if userStorage.isOnboardingPassed {
+        if userStorage.isOnboardingComplete {
             ShowMainFlow()
         } else {
             showOnboardingFlow()
@@ -24,44 +25,16 @@ class AppCoordinator: Coordinator {
 private extension AppCoordinator {
     func showOnboardingFlow() {
         guard let navigationController = navigationController else { return }
-        let onboardingCoordinator = OnboardingCoordinator(finishDelegate: self, navigationController: navigationController, type: .onboarding)
-        addChildCoordinator(onboardingCoordinator)
-        onboardingCoordinator.start()
+        factory.makeOnboardingFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
         
     }
     func ShowSignInFlow() {
         guard let navigationController = navigationController else { return }
-        let signInNavigationController = UINavigationController()
-        let signInCoordinator = SignInCoordinator(navigationController: signInNavigationController, type: .signIn)
-        signInCoordinator.finishDelegate = self
-        signInCoordinator.start()
+        factory.makeSignInFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
     }
     func ShowMainFlow() {
         guard let navigationController = navigationController else { return }
-        let profileNavigationController = UINavigationController()
-        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person"), tag: 0)
-        let profileCoordinator = ProfileCoordinator(navigationController: profileNavigationController, type: .profile)
-        profileCoordinator.finishDelegate = self
-        profileCoordinator.start()
-        
-        let mainNavigationController = UINavigationController()
-        mainNavigationController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "house"), tag: 1)
-        let mainCoordinator = MainCoordinator(navigationController: mainNavigationController, type: .main)
-        mainCoordinator.finishDelegate = self
-        mainCoordinator.start()
-        
-        let cartNavigationController = UINavigationController()
-        cartNavigationController.tabBarItem = UITabBarItem(title: "Cart", image: UIImage(systemName: "basket"), tag: 2)
-        let cartCoordinator = CartCoordinator(navigationController: cartNavigationController, type: .cart)
-        cartCoordinator.finishDelegate = self
-        cartCoordinator.start()
-        
-        addChildCoordinator(profileCoordinator)
-        addChildCoordinator(mainCoordinator)
-        addChildCoordinator(cartCoordinator)
-        
-        let tabBarControllers = [profileNavigationController, mainNavigationController, cartNavigationController]
-        let tabBarViewController = TabBarController(tabBarControllers: tabBarControllers)
+        let tabBarViewController = factory.makeMainFlow(coordinator: self, finishDelegate: self)
         navigationController.pushViewController(tabBarViewController, animated: true)
     }
 }

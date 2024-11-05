@@ -40,6 +40,9 @@
 		F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */; };
 		F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */; };
 		F431615B2CD80B3400A6BFA8 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431615A2CD80B3400A6BFA8 /* UserStorage.swift */; };
+		F4E0A2982CD96276006E671D /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0A2972CD96265006E671D /* ModuleFactory.swift */; };
+		F4E0A29A2CDAA4D2006E671D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0A2992CDAA4CC006E671D /* Constants.swift */; };
+		F4E0A29C2CDAB1D6006E671D /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E0A29B2CDAB1D3006E671D /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F431615A2CD80B3400A6BFA8 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		F4E0A2972CD96265006E671D /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		F4E0A2992CDAA4CC006E671D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F4E0A29B2CDAB1D3006E671D /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +118,7 @@
 			children = (
 				F43161592CD80B1D00A6BFA8 /* Services */,
 				F43161462CD3FE5100A6BFA8 /* Coordinators */,
-				F43161222CD02A4500A6BFA8 /* Helpers */,
+				F43161222CD02A4500A6BFA8 /* Extensions */,
 				F43161162CD0216500A6BFA8 /* Modules */,
 				F43161152CCC3EB500A6BFA8 /* App */,
 				F43161042CCC3BF400A6BFA8 /* ViewController.swift */,
@@ -145,6 +151,7 @@
 		F43161162CD0216500A6BFA8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F4E0A2962CD961EB006E671D /* ModuleFactory */,
 				F43161182CD021A300A6BFA8 /* Onboarding */,
 				F43161172CD0218F00A6BFA8 /* SignInFlow */,
 				F43161192CD021CD00A6BFA8 /* ProfileFlow */,
@@ -160,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F43161252CD02DFE00A6BFA8 /* SignInViewController.swift */,
+				F4E0A29B2CDAB1D3006E671D /* SignInViewModel.swift */,
 			);
 			path = SignInFlow;
 			sourceTree = "<group>";
@@ -213,13 +221,14 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		F43161222CD02A4500A6BFA8 /* Helpers */ = {
+		F43161222CD02A4500A6BFA8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F4E0A2992CDAA4CC006E671D /* Constants.swift */,
 				F43161232CD02B1900A6BFA8 /* UIColor+RGBandHEX.swift */,
 				F43161422CD2B2B000A6BFA8 /* UIFont+Extention.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F431612F2CD2B02400A6BFA8 /* Fonts */ = {
@@ -274,6 +283,14 @@
 				F431615A2CD80B3400A6BFA8 /* UserStorage.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		F4E0A2962CD961EB006E671D /* ModuleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				F4E0A2972CD96265006E671D /* ModuleFactory.swift */,
+			);
+			path = ModuleFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,14 +371,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E0A29A2CDAA4D2006E671D /* Constants.swift in Sources */,
 				F43161262CD02DFE00A6BFA8 /* SignInViewController.swift in Sources */,
 				F43161052CCC3BF400A6BFA8 /* ViewController.swift in Sources */,
 				F431614A2CD3FEAD00A6BFA8 /* Coordinator.swift in Sources */,
 				F431612C2CD02E4900A6BFA8 /* CartViewController.swift in Sources */,
+				F4E0A2982CD96276006E671D /* ModuleFactory.swift in Sources */,
 				F43161452CD2BC2900A6BFA8 /* AppColors.swift in Sources */,
 				F43161432CD2B2B000A6BFA8 /* UIFont+Extention.swift in Sources */,
 				F431611F2CD027EF00A6BFA8 /* TabBarController.swift in Sources */,
 				F43161482CD3FE8900A6BFA8 /* AppCoordinator.swift in Sources */,
+				F4E0A29C2CDAB1D6006E671D /* SignInViewModel.swift in Sources */,
 				F431614E2CD424F800A6BFA8 /* SignInCoordinator.swift in Sources */,
 				F431615B2CD80B3400A6BFA8 /* UserStorage.swift in Sources */,
 				F431612E2CD02E7100A6BFA8 /* SideMenuViewController.swift in Sources */,

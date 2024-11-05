@@ -23,7 +23,7 @@ class OnboardingViewModel: OnboardingFinishDelegate {
     
     
     func onboardingFinish() {
-        userStorage.isOnboardingPassed = true
+        userStorage.isOnboardingComplete = true
         coordinator?.finish()
     }
     
