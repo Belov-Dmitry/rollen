@@ -24,6 +24,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let appCoordinator = AppCoordinator(navigationController: navigationVC, type: .app)
         appCoordinator.start()
       }
-
 }
 
