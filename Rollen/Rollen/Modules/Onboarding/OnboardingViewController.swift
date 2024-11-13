@@ -15,8 +15,8 @@ class OnboardingViewController: UIViewController {
     private let gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
         layer.colors = [
-            UIColor.accentLightBlue.cgColor,
-            UIColor.accentDarkBlue.cgColor
+            AppColors.Blue.light.cgColor,
+            AppColors.background.cgColor
         ]
         layer.locations = [0.0, 1.0]
         return layer
@@ -24,7 +24,7 @@ class OnboardingViewController: UIViewController {
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "LogoCircle")
+        imageView.image = UIImage(named: ImageName.logo)
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -32,10 +32,10 @@ class OnboardingViewController: UIViewController {
     
     private let welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Добро пожаловать!"
+        label.text = ConstantsOnboarding.welcomeLabelText
         label.textAlignment = .center
         label.font = .Sen.medium.size(of: 30)
-        label.textColor = .accentDarkYellow
+        label.textColor = AppColors.tabbarInactiveButton
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -43,10 +43,10 @@ class OnboardingViewController: UIViewController {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Роллы, которые доставляют удовольствие!"
+        label.text = ConstantsOnboarding.topLabelText
         label.textAlignment = .center
         label.font = .Sen.regular.size(of: 20)
-        label.textColor = .accentDarkYellow
+        label.textColor = AppColors.tabbarInactiveButton
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -54,9 +54,9 @@ class OnboardingViewController: UIViewController {
     
     private let startButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Хочу есть!", for: .normal)
+        button.setTitle(ConstantsOnboarding.startButtonText, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 28, weight: .semibold)
-        button.backgroundColor = .accentLightRed
+        button.backgroundColor = AppColors.tabbarActiveButton
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 23
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +89,6 @@ class OnboardingViewController: UIViewController {
     
     private func setupUI() {
         view.layer.addSublayer(gradientLayer)
-        
         view.addSubview(logoImageView)
         view.addSubview(welcomeLabel)
         view.addSubview(descriptionLabel)
@@ -103,10 +102,7 @@ class OnboardingViewController: UIViewController {
     @objc private func startButtonTapped() {
         viewModel?.onboardingFinish()
     }
-    
-    
-    
-    
+      
     private func setupConstraints() {
         
         let topInset: CGFloat

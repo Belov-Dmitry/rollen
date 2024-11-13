@@ -12,8 +12,5 @@ class ProfileCoordinator: Coordinator {
     override func start() {
         let vc = ProfileViewController()
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
-    
+    }  
 }

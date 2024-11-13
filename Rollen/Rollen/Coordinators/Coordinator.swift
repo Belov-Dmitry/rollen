@@ -67,8 +67,6 @@ class Coordinator: CoordinatorProtocol {
     }
     func finish() {
         print("Coordinator finish")
-//        childCoordinators.removeAll()
-//        finishDelegate?.coordinatorDidFinish(childCoordinator: self)
     }
     
 }

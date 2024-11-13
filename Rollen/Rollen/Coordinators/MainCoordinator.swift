@@ -13,7 +13,4 @@ class MainCoordinator: Coordinator {
         let vc = MainViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
 }

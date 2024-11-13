@@ -34,6 +34,30 @@ struct ModuleFactory {
         return signInViewController
     }
     
+    static func makeForgotPassword(coordinator: SignInCoordinator) -> ForgotPasswordViewController {
+        let viewModel = ForgotPasswordViewModel(coordinator: coordinator)
+        let forgotPasswordViewController = ForgotPasswordViewController(viewModel: viewModel)
+        return forgotPasswordViewController
+    }
+    
+    static func makeSignUp(coordinator: SignInCoordinator) -> SignUpViewController {
+        let viewModel = SignUpViewModel(coordinator: coordinator)
+        let signUpViewController = SignUpViewController(viewModel: viewModel)
+        return signUpViewController
+    }
+    
+    static func makeVerification(coordinator: SignInCoordinator) -> VerificationViewController {
+        let viewModel = VerificationViewModel(coordinator: coordinator)
+        let verificationViewController = VerificationViewController(viewModel: viewModel)
+        return verificationViewController
+    }
+    
+    static func makeNewPassword(coordinator: SignInCoordinator) -> NewPasswordViewController {
+        let viewModel = NewPasswordViewModel(coordinator: coordinator)
+        let newPasswordViewController = NewPasswordViewController(viewModel: viewModel)
+        return newPasswordViewController
+    }
+    
     
     //MARK: - Main flow
     static func makeMainFlow(coordinator: AppCoordinator, finishDelegate: CoordinatorFinishDelegate) -> TabBarController{
@@ -62,11 +86,5 @@ struct ModuleFactory {
         let tabBarControllers = [profileNavigationController, mainNavigationController, cartNavigationController]
         let tabBarViewController = TabBarController(tabBarControllers: tabBarControllers)
         return tabBarViewController
-    }
-    
-    static func makeMain(coordinator: OnboardingCoordinator) -> OnboardingViewController {
-        let viewModel = OnboardingViewModel(coordinator: coordinator)
-        let onboardingViewController = OnboardingViewController(viewModel: viewModel)
-        return onboardingViewController
     }
 }
