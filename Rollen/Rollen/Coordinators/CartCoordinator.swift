@@ -12,8 +12,5 @@ class CartCoordinator: Coordinator {
     override func start() {
         let vc = CartViewController()
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
-    
+    }  
 }

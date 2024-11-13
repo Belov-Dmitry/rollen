@@ -1,5 +1,5 @@
 //
-//  SignInViewModel.swift
+//  NewPasswordViewModel.swift
 //  Rollen
 //
 //  Created by Dmitry Belov on 05.11.2024.
@@ -7,26 +7,19 @@
 
 import Foundation
 
-protocol SignInFinishDelegate: AnyObject {
-    func signInFinish()
+protocol NewPasswordFinishDelegate: AnyObject {
+    func newPasswordFinish()
 }
 
-class SignInViewModel: SignInFinishDelegate {
+class NewPasswordViewModel: NewPasswordFinishDelegate {
     weak var coordinator: SignInCoordinator?
     private let userStorage = UserStorage.shared
     
     init(coordinator: SignInCoordinator? = nil) {
         self.coordinator = coordinator
     }
-    
-    
-    
-    
-    func signInFinish() {
-        //userStorage.isOnboardingComplete = true
-        print("signIn Coordinator Finish")
+
+    func newPasswordFinish() {
         coordinator?.finish()
     }
-    
-    
 }

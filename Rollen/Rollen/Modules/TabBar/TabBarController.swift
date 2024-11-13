@@ -22,7 +22,7 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.backgroundColor = .accentDarkBlue
+        tabBar.backgroundColor = AppColors.background
         tabBar.tintColor = .accentLightRed
         tabBar.unselectedItemTintColor = .accentDarkYellow
         tabBar.itemPositioning = .centered
