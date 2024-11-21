@@ -85,6 +85,7 @@ struct ModuleFactory {
         
         let tabBarControllers = [profileNavigationController, mainNavigationController, cartNavigationController]
         let tabBarViewController = TabBarController(tabBarControllers: tabBarControllers)
+        tabBarViewController.selectedIndex = 1
         return tabBarViewController
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 class MainCoordinator: Coordinator {
     
     override func start() {
-        let vc = MainViewController()
+        let vc = MainMenuViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
