@@ -13,7 +13,8 @@ class AppCoordinator: Coordinator {
     private let factory = ModuleFactory.self
     
     override func start() {
-        showOnboardingFlow()
+        ShowMainFlow()
+        //showOnboardingFlow()
         //ShowSignInFlow()
 //        if userStorage.isOnboardingComplete {
 //            ShowMainFlow()

@@ -9,7 +9,7 @@ import UIKit
 
 struct DishType {
     let dishTypeName: String
-    let dishTypeImageName: UIImage
+    let dishTypeImage: UIImage
 }
 
 struct Dish: Codable {

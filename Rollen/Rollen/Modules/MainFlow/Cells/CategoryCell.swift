@@ -48,8 +48,8 @@ class CategoryCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with title: String) {
-        titleLabel.text = title
-        imageView.image = UIImage(named: title) // Placeholder: Set a default image or load from assets
+    func configure(with dish: DishType?) {
+        titleLabel.text = dish?.dishTypeName ?? ""
+        imageView.image = dish?.dishTypeImage ?? UIImage()
     }
 }

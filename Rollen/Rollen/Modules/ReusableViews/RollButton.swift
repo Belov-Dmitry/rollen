@@ -63,7 +63,7 @@ class RollButton: UIButton {
     // MARK: - setupButton
     private func setupButton(with text: String) {
         setTitle(text, for: .normal)
-        backgroundColor = .accentLightRed
+        backgroundColor = AppColors.addButton
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: buttonSize.fontSize)
         layer.cornerRadius = buttonSize.cornerRadius
