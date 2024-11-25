@@ -104,17 +104,17 @@ class MainMenuViewController: UIViewController {
                                                             target: self,
                                                             action: #selector(selectBasketTapped))
             
-        goToTopButton.addTarget(self, action: #selector(selectMyButtonTapped), for: .touchUpInside)
+        goToTopButton.addTarget(self, action: #selector(goToTop), for: .touchUpInside)
         }
         
-        @objc func selectMyButtonTapped() {
+        @objc func goToTop() {
             scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         }
         
         @objc func selectMenuTapped() {
             print("tapped")
-            toggleMenu(completion: nil)
+            showMenu()
             //delegate?.didSelectMenuItem()
         }
         
@@ -191,37 +191,15 @@ private extension MainMenuViewController {
     }
 }
 
+//MARK: - Open Close SideMenu
 private extension MainMenuViewController {
     
-    func toggleMenu(completion: (() -> Void)?) {
-        switch sideMenuState {
-        case .menuClose:
-            
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 8, options: .curveEaseInOut) {
-                
-                self.navigationController?.view.frame.origin.x = self.view.frame.width - 100
-                self.navigationItem.leftBarButtonItem?.image = UIImage(named: ImageName.close)
-                
-            } completion: { [weak self] (done) in
-                if done {
-                    self?.sideMenuState = .menuOpen
-                }
-            }
-            
-        case .menuOpen:
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 8, options: .curveEaseInOut) {
-                
-                self.navigationController?.view.frame.origin.x = 0
-                self.navigationItem.leftBarButtonItem?.image = UIImage(named: ImageName.sideMenuButtonImage)
-                
-            } completion: { [weak self] (done) in
-                if done {
-                    self?.sideMenuState = .menuClose
-                    DispatchQueue.main.async {
-                        completion?()
-                    }
-                }
-            }
-        }
+    func showMenu() {
+        let sideMenuViewController = SideMenuViewController()
+        sideMenuViewController.modalPresentationStyle = .overFullScreen
+        sideMenuViewController.modalTransitionStyle = .flipHorizontal
+        present(sideMenuViewController, animated: true, completion: nil)
+        
+        
     }
 }
