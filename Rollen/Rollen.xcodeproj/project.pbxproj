@@ -65,6 +65,7 @@
 /* Begin PBXFileReference section */
 		F40038F72CF2511B00092268 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F40038F92CF264CF00092268 /* SearchMenuField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMenuField.swift; sourceTree = "<group>"; };
+		F40038FC2CF3A79E00092268 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F42A27F42CEB928C00F99720 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		F42A27F92CEB987800F99720 /* dishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dishes.json; sourceTree = "<group>"; };
 		F43160FD2CCC3BF400A6BFA8 /* Rollen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rollen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +139,14 @@
 				F456FDAC2CE67E1D00A7C32E /* HeaderCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F40038FB2CF3A79100092268 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F40038FC2CF3A79E00092268 /* SideMenuViewController.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		F43160F42CCC3BF400A6BFA8 = {
@@ -241,6 +250,7 @@
 		F431611A2CD021DE00A6BFA8 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				F40038FB2CF3A79100092268 /* SideMenu */,
 				F40038F52CF24DC300092268 /* Cells */,
 				F40038F72CF2511B00092268 /* MainViewModel.swift */,
 				F43161292CD02E3B00A6BFA8 /* MainViewController.swift */,

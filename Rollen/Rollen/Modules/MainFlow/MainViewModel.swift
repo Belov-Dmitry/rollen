@@ -37,7 +37,7 @@ class MainViewModel: MainFinishDelegate {
                 DishType(dishTypeName: "Холодные роллы", dishTypeImage: UIImage(named: "060")!),
                 DishType(dishTypeName: "Запечённые роллы", dishTypeImage: UIImage(named: "056")!),
                 DishType(dishTypeName: "Темпура роллы", dishTypeImage: UIImage(named: "031")!),
-                DishType(dishTypeName: "Сеты", dishTypeImage: UIImage(named: "081")!),
+                DishType(dishTypeName: "Сеты", dishTypeImage: UIImage(named: "083")!),
                 DishType(dishTypeName: "Суши", dishTypeImage: UIImage(named: "023")!),
                 DishType(dishTypeName: "Закуски", dishTypeImage: UIImage(named: "012")!),
                 DishType(dishTypeName: "Wok", dishTypeImage: UIImage(named: "009")!),

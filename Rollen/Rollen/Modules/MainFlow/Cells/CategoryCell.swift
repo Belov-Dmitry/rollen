@@ -10,38 +10,18 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 8
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    private let imageView = UIImageView()
+    private let titleLabel = UILabel()
+    private let backgroundLabelView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(imageView)
-        contentView.addSubview(titleLabel)
-        
-        imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
-        
-        titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        setupUI()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -51,5 +31,50 @@ class CategoryCell: UICollectionViewCell {
     func configure(with dish: DishType?) {
         titleLabel.text = dish?.dishTypeName ?? ""
         imageView.image = dish?.dishTypeImage ?? UIImage()
+    }
+    
+    private func setupLayout() {
+        backgroundLabelView.layer.masksToBounds = true
+        backgroundLabelView.layoutIfNeeded()
+        let maskPath = UIBezierPath(roundedRect: backgroundLabelView.bounds,
+                                    byRoundingCorners: [.bottomLeft, .bottomRight],
+                                    cornerRadii: CGSize(width: 26, height: 26))
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = maskPath.cgPath
+        backgroundLabelView.layer.mask = maskLayer
+    }
+    
+    private func setupUI() {
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 26
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        titleLabel.textColor = AppColors.Yellow.medium
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        backgroundLabelView.backgroundColor = AppColors.Blue.darkTransparent
+        backgroundLabelView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(imageView)
+        contentView.addSubview(backgroundLabelView)
+        contentView.addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.7),
+            
+            backgroundLabelView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            backgroundLabelView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor),
+            backgroundLabelView.widthAnchor.constraint(equalTo: imageView.widthAnchor),
+            backgroundLabelView.heightAnchor.constraint(equalToConstant: 40),
+            
+            titleLabel.centerXAnchor.constraint(equalTo: backgroundLabelView.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: backgroundLabelView.centerYAnchor)
+        ])
     }
 }

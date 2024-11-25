@@ -69,9 +69,7 @@ struct ModuleFactory {
         
         let mainNavigationController = UINavigationController()
         mainNavigationController.tabBarItem = UITabBarItem(title: "Main", image: UIImage(systemName: "house"), tag: 1)
-        //mainNavigationController.setNavigationBarHidden(true, animated: true)
-        //mainNavigationController.isNavigationBarHidden = true
-        mainNavigationController.navigationBar.tintColor = .red
+        mainNavigationController.navigationBar.tintColor = AppColors.Red.medium
         mainNavigationController.navigationBar.barTintColor = AppColors.tabbarBackground
         mainNavigationController.navigationBar.backgroundColor = AppColors.tabbarBackground
         mainNavigationController.navigationBar.isTranslucent = false

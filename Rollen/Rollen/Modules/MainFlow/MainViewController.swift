@@ -9,6 +9,15 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
+    enum SideMenuState {
+        case menuClose
+        case menuOpen
+    }
+    
+    private var sideMenuState: SideMenuState = .menuClose
+    
+    
+    
     var viewModel = MainViewModel()
     
     private let scrollView = UIScrollView()
@@ -47,26 +56,14 @@ class MainMenuViewController: UIViewController {
     private let goToTopButton = RollButton(text: "Вернись наверх!", size: .large)
     
     
-    //    // MARK: - init
-    //    init(viewModel: MainViewModel) {
-    //        super.init(nibName: nil, bundle: nil)
-    //        self.viewModel = viewModel
-    //        self.viewModel.makeDishTypeArray()
-    //    }
-    //
-    //    required init?(coder: NSCoder) {
-    //        fatalError("init(coder:) has not been implemented")
-    //    }
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupCollectionView()
-        //setupConstraints()
         addAction()
         configureScrollView()
-        setupLayout()
+        setupConstraints()
     }
     
     private func setupUI() {
@@ -75,7 +72,6 @@ class MainMenuViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         
         view.backgroundColor = AppColors.MainMenuBackgroundColor
-        
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -89,7 +85,6 @@ class MainMenuViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        print(#function)
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -98,17 +93,16 @@ class MainMenuViewController: UIViewController {
         collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
     }
     
-//    private func setupConstraints() {
-//        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-//        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-//        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-//        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-//        
-//    }
     func addAction() {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageName.sideMenuButtonImage), style: .done, target: self, action: #selector(selectMenuTapped))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageName.sideMenuButtonImage),
+                                                               style: .done,
+                                                               target: self,
+                                                               action: #selector(selectMenuTapped))
             
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageName.busketButtonImage), style: .done, target: self, action: #selector(selectBasketTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "basket"),
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(selectBasketTapped))
             
         goToTopButton.addTarget(self, action: #selector(selectMyButtonTapped), for: .touchUpInside)
         }
@@ -120,6 +114,7 @@ class MainMenuViewController: UIViewController {
         
         @objc func selectMenuTapped() {
             print("tapped")
+            toggleMenu(completion: nil)
             //delegate?.didSelectMenuItem()
         }
         
@@ -157,7 +152,7 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
 }
 
 private extension MainMenuViewController {
-    func setupLayout() {
+    func setupConstraints() {
         
         scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
@@ -193,5 +188,40 @@ private extension MainMenuViewController {
         goToTopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         goToTopButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
         goToTopButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
+    }
+}
+
+private extension MainMenuViewController {
+    
+    func toggleMenu(completion: (() -> Void)?) {
+        switch sideMenuState {
+        case .menuClose:
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 8, options: .curveEaseInOut) {
+                
+                self.navigationController?.view.frame.origin.x = self.view.frame.width - 100
+                self.navigationItem.leftBarButtonItem?.image = UIImage(named: ImageName.close)
+                
+            } completion: { [weak self] (done) in
+                if done {
+                    self?.sideMenuState = .menuOpen
+                }
+            }
+            
+        case .menuOpen:
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 8, options: .curveEaseInOut) {
+                
+                self.navigationController?.view.frame.origin.x = 0
+                self.navigationItem.leftBarButtonItem?.image = UIImage(named: ImageName.sideMenuButtonImage)
+                
+            } completion: { [weak self] (done) in
+                if done {
+                    self?.sideMenuState = .menuClose
+                    DispatchQueue.main.async {
+                        completion?()
+                    }
+                }
+            }
+        }
     }
 }

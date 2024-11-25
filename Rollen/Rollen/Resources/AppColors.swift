@@ -38,6 +38,7 @@ enum AppColors {
         static let medium = UIColor(hex: "6E1500")
         static let light = UIColor(hex: "C14D30")  // Active Tabbar Button
         static let lightTransparent = UIColor(hex: "C14D30", alpha: 0.3)
+        static let darkTransparent = UIColor(hex: "551000", alpha: 0.3)
     }
 }
 
