@@ -9,15 +9,6 @@ import UIKit
 
 class MainMenuViewController: UIViewController {
     
-    enum SideMenuState {
-        case menuClose
-        case menuOpen
-    }
-    
-    private var sideMenuState: SideMenuState = .menuClose
-    
-    
-    
     var viewModel = MainViewModel()
     
     private let scrollView = UIScrollView()
@@ -36,7 +27,7 @@ class MainMenuViewController: UIViewController {
         let element = UILabel()
         element.text = "Еда, приготовленная с любовью!"
         element.textAlignment = .center
-        element.textColor = .accentLightRed
+        element.textColor = AppColors.Red.light
         element.font = .boldSystemFont(ofSize: 17)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -114,25 +105,41 @@ class MainMenuViewController: UIViewController {
         
         @objc func selectMenuTapped() {
             print("tapped")
-            showMenu()
+            showSideMenu()
             //delegate?.didSelectMenuItem()
         }
         
         @objc func selectBasketTapped() {
-            let viewControllerToPresent = ViewController()
-            viewControllerToPresent.modalPresentationStyle = .fullScreen
-            present(viewControllerToPresent, animated: true, completion: nil)
+            print("basket pressed")
+            tabBarController?.selectedIndex = 0
+            
         }
     func configureScrollView() {
-            scrollView.translatesAutoresizingMaskIntoConstraints = false
-            scrollView.showsVerticalScrollIndicator = true
-            scrollView.alwaysBounceVertical = true
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.alwaysBounceVertical = true
         scrollView.backgroundColor = AppColors.tabbarBackground
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            contentView.backgroundColor = AppColors.tabbarBackground
-        }
-
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.backgroundColor = AppColors.tabbarBackground
+    }
+    
 }
+//MARK: - SideMenuViewControllerDelegate
+extension MainMenuViewController: SideMenuViewControllerDelegate {
+    func didSelect(menuItem: SideMenuViewController.MenuOption) {
+        switch menuItem {
+        case .profile:
+            tabBarController?.selectedIndex = 0
+        case .wishlist:
+            print("Wishlist selected")
+        case .loyaltyPoints:
+            print("Loyalty Points selected")
+        case .paymentMethods:
+            print("Payment Methods selected") } }
+}
+
+
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
 extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -149,11 +156,30 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
         let width = collectionView.frame.width
         return CGSize(width: width, height: width * 0.7)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dishType = viewModel.dishTypeArray[indexPath.item]
+        viewModel.filterDishes(by: dishType.dishTypeName)
+        let dishesVC = DishesViewController()
+        dishesVC.dishes = viewModel.filteredDishes
+        navigationController?.pushViewController(dishesVC, animated: true) }
 }
 
+//MARK: - Show SideMenu
+private extension MainMenuViewController {
+    
+    func showSideMenu() {
+        let sideMenuViewController = SideMenuViewController()
+        sideMenuViewController.delegate = self
+        sideMenuViewController.modalPresentationStyle = .overFullScreen
+        sideMenuViewController.modalTransitionStyle = .flipHorizontal
+        present(sideMenuViewController, animated: true, completion: nil)
+    }
+}
+
+//MARK: - Setup Constraints
 private extension MainMenuViewController {
     func setupConstraints() {
-        
         scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
@@ -186,20 +212,6 @@ private extension MainMenuViewController {
         
         goToTopButton.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20).isActive = true
         goToTopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        goToTopButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
         goToTopButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20).isActive = true
-    }
-}
-
-//MARK: - Open Close SideMenu
-private extension MainMenuViewController {
-    
-    func showMenu() {
-        let sideMenuViewController = SideMenuViewController()
-        sideMenuViewController.modalPresentationStyle = .overFullScreen
-        sideMenuViewController.modalTransitionStyle = .flipHorizontal
-        present(sideMenuViewController, animated: true, completion: nil)
-        
-        
     }
 }

@@ -134,6 +134,8 @@ extension SideMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = MenuOption.allCases[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+        print(item)
         delegate?.didSelect(menuItem: item)
+        dismiss(animated: true, completion: nil)
     }
 }

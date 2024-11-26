@@ -11,6 +11,7 @@
 		F40038FA2CF264CF00092268 /* SearchMenuField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40038F92CF264CF00092268 /* SearchMenuField.swift */; };
 		F42A27F52CEB92A600F99720 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42A27F42CEB928C00F99720 /* Dish.swift */; };
 		F42A27FA2CEB988A00F99720 /* dishes.json in Resources */ = {isa = PBXBuildFile; fileRef = F42A27F92CEB987800F99720 /* dishes.json */; };
+		F42C49952CF63AC500C93F17 /* DishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42C49942CF63AC500C93F17 /* DishCell.swift */; };
 		F43161012CCC3BF400A6BFA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161002CCC3BF400A6BFA8 /* AppDelegate.swift */; };
 		F43161032CCC3BF400A6BFA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161022CCC3BF400A6BFA8 /* SceneDelegate.swift */; };
 		F43161052CCC3BF400A6BFA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161042CCC3BF400A6BFA8 /* ViewController.swift */; };
@@ -44,7 +45,6 @@
 		F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */; };
 		F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */; };
 		F431615B2CD80B3400A6BFA8 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431615A2CD80B3400A6BFA8 /* UserStorage.swift */; };
-		F456FDAD2CE67E1D00A7C32E /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456FDAC2CE67E1D00A7C32E /* HeaderCell.swift */; };
 		F456FDAF2CE67F5500A7C32E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456FDAE2CE67F5500A7C32E /* CategoryCell.swift */; };
 		F4CCB96F2CE137A400EAE322 /* NewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CCB96E2CE137A400EAE322 /* NewPasswordViewModel.swift */; };
 		F4CCB9712CE137A600EAE322 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CCB9702CE137A600EAE322 /* SingUpViewModel.swift */; };
@@ -68,6 +68,7 @@
 		F40038FC2CF3A79E00092268 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		F42A27F42CEB928C00F99720 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		F42A27F92CEB987800F99720 /* dishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dishes.json; sourceTree = "<group>"; };
+		F42C49942CF63AC500C93F17 /* DishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCell.swift; sourceTree = "<group>"; };
 		F43160FD2CCC3BF400A6BFA8 /* Rollen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rollen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43161002CCC3BF400A6BFA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F43161022CCC3BF400A6BFA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F431615A2CD80B3400A6BFA8 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
-		F456FDAC2CE67E1D00A7C32E /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		F456FDAE2CE67F5500A7C32E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		F4CCB96E2CE137A400EAE322 /* NewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewModel.swift; sourceTree = "<group>"; };
 		F4CCB9702CE137A600EAE322 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
@@ -135,8 +135,8 @@
 		F40038F52CF24DC300092268 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F42C49942CF63AC500C93F17 /* DishCell.swift */,
 				F456FDAE2CE67F5500A7C32E /* CategoryCell.swift */,
-				F456FDAC2CE67E1D00A7C32E /* HeaderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -536,9 +536,9 @@
 				F42A27F52CEB92A600F99720 /* Dish.swift in Sources */,
 				F4E0A2A82CDFCF6D006E671D /* VerificationViewController.swift in Sources */,
 				F4CCB96F2CE137A400EAE322 /* NewPasswordViewModel.swift in Sources */,
-				F456FDAD2CE67E1D00A7C32E /* HeaderCell.swift in Sources */,
 				F43161282CD02E2A00A6BFA8 /* ProfileViewController.swift in Sources */,
 				F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */,
+				F42C49952CF63AC500C93F17 /* DishCell.swift in Sources */,
 				F4CCB9712CE137A600EAE322 /* SingUpViewModel.swift in Sources */,
 				F4E0A2A12CDE9DE5006E671D /* LogoView.swift in Sources */,
 				F43161502CD4250B00A6BFA8 /* ProfileCoordinator.swift in Sources */,

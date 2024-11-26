@@ -21,18 +21,33 @@ class MainViewModel: MainFinishDelegate {
     weak var coordinator: MainCoordinator?
     
     var dishTypeArray: [DishType] = []
+    var dishes: [Dish] = []
+    var filteredDishes: [Dish] = []
     
     init(coordinator: MainCoordinator? = nil) {
         self.coordinator = coordinator
         makeDishTypeArray()
+        
     }
     
     func mainFinish() {
         coordinator?.finish()
     }
     
+    private func loadDishes() {
+        guard let url = Bundle.main.url(forResource: "dishes", withExtension: "json") else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            dishes = try JSONDecoder().decode([Dish].self, from: data) } catch { print("Error loading dishes: \(error)")
+            }
+    }
+    
+    func filterDishes(by type: String) {
+        filteredDishes = dishes.filter { $0.type == type
+        }
+    }
+    
     func makeDishTypeArray() {
-        print(#function)
             dishTypeArray = [
                 DishType(dishTypeName: "Холодные роллы", dishTypeImage: UIImage(named: "060")!),
                 DishType(dishTypeName: "Запечённые роллы", dishTypeImage: UIImage(named: "056")!),

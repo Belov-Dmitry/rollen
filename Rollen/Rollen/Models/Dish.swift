@@ -12,9 +12,9 @@ struct DishType {
     let dishTypeImage: UIImage
 }
 
-struct Dish: Codable {
+struct Dish: Decodable {
     let id: Int
-    let dishType: String
+    let type: String
     let name: String
     let imageName: String
     let ingredients: String

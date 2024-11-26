@@ -150,7 +150,7 @@ private extension SignInViewController {
         
         goToMenuButton.topAnchor.constraint(equalTo: forgotPassLabel.bottomAnchor, constant: 20).isActive = true
         goToMenuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        goToMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
+//        goToMenuButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6).isActive = true
         
         imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
