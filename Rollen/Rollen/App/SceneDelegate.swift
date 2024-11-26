@@ -16,9 +16,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
           guard let windowScene = (scene as? UIWindowScene) else { return }
           window = UIWindow(windowScene: windowScene)
-          //let viewController = ViewController()
-          //let viewController = OnboardingViewController()
           let navigationVC = UINavigationController()
+        navigationVC.navigationBar.isHidden = true //скрытие первого NavigationController в NavigationController
+        
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = AppColors.tabbarBackground
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        
+        
           window?.rootViewController = navigationVC
           window?.makeKeyAndVisible()
         let appCoordinator = AppCoordinator(navigationController: navigationVC, type: .app)

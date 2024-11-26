@@ -9,12 +9,15 @@ import UIKit
 
 enum AppColors {
     static let background = AppColors.Blue.dark
-    static let tabbarBackground = AppColors.Blue.medium
+    static let tabbarBackground = AppColors.Blue.dark
     static let tabbarActiveButton = AppColors.Red.light
     static let tabbarInactiveButton = AppColors.Yellow.dark
     static let addButton = AppColors.Red.dark
     static let registerTextFieldTextColor = AppColors.Yellow.medium
     static let registerTextFieldBackgroundColor = AppColors.Blue.medium
+    static let MainMenuBackgroundColor = AppColors.Blue.dark
+    static let MainMenuCellBackgroundColor = AppColors.Blue.medium
+    static let MainMenuHeaderCellColor = AppColors.Red.light
     
     enum Blue {
         static let dark = UIColor(hex: "013145")  // Background
@@ -35,6 +38,8 @@ enum AppColors {
         static let medium = UIColor(hex: "6E1500")
         static let light = UIColor(hex: "C14D30")  // Active Tabbar Button
         static let lightTransparent = UIColor(hex: "C14D30", alpha: 0.3)
+        static let mediumTransparent = UIColor(hex: "6E1500", alpha: 0.3)
+        static let darkTransparent = UIColor(hex: "551000", alpha: 0.3)
     }
 }
 

@@ -10,6 +10,15 @@ enum UserDefaultsKey {
 }
 enum ImageName {
     static let logo = "LogoCircle"
+    static let sideMenuButtonImage = "sideMenuButtonImage"
+    static let busketButtonImage = "busketButtonImage"
+    static let close = "close"
+    
+    static let menuProfile = "profile"
+    static let menuWishlist = "wishlist"
+    static let menuLoyaltyPoints = "loyaltyPoints"
+    static let menuPaymentMethods = "paymentMethods"
+
 }
 enum SystemImageName {
     static let arrowRight = "arrow.right"

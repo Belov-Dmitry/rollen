@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40038F82CF2512600092268 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40038F72CF2511B00092268 /* MainViewModel.swift */; };
+		F40038FA2CF264CF00092268 /* SearchMenuField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40038F92CF264CF00092268 /* SearchMenuField.swift */; };
+		F42A27F52CEB92A600F99720 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42A27F42CEB928C00F99720 /* Dish.swift */; };
+		F42A27FA2CEB988A00F99720 /* dishes.json in Resources */ = {isa = PBXBuildFile; fileRef = F42A27F92CEB987800F99720 /* dishes.json */; };
+		F42C49952CF63AC500C93F17 /* DishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42C49942CF63AC500C93F17 /* DishCell.swift */; };
 		F43161012CCC3BF400A6BFA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161002CCC3BF400A6BFA8 /* AppDelegate.swift */; };
 		F43161032CCC3BF400A6BFA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161022CCC3BF400A6BFA8 /* SceneDelegate.swift */; };
 		F43161052CCC3BF400A6BFA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161042CCC3BF400A6BFA8 /* ViewController.swift */; };
@@ -40,6 +45,7 @@
 		F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */; };
 		F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */; };
 		F431615B2CD80B3400A6BFA8 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431615A2CD80B3400A6BFA8 /* UserStorage.swift */; };
+		F456FDAF2CE67F5500A7C32E /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456FDAE2CE67F5500A7C32E /* CategoryCell.swift */; };
 		F4CCB96F2CE137A400EAE322 /* NewPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CCB96E2CE137A400EAE322 /* NewPasswordViewModel.swift */; };
 		F4CCB9712CE137A600EAE322 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CCB9702CE137A600EAE322 /* SingUpViewModel.swift */; };
 		F4CCB9732CE137A800EAE322 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CCB9722CE137A800EAE322 /* ForgotPasswordViewModel.swift */; };
@@ -57,6 +63,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F40038F72CF2511B00092268 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		F40038F92CF264CF00092268 /* SearchMenuField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMenuField.swift; sourceTree = "<group>"; };
+		F40038FC2CF3A79E00092268 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		F42A27F42CEB928C00F99720 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		F42A27F92CEB987800F99720 /* dishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dishes.json; sourceTree = "<group>"; };
+		F42C49942CF63AC500C93F17 /* DishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCell.swift; sourceTree = "<group>"; };
 		F43160FD2CCC3BF400A6BFA8 /* Rollen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rollen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43161002CCC3BF400A6BFA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F43161022CCC3BF400A6BFA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +104,7 @@
 		F43161552CD4254200A6BFA8 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		F43161572CD7FB9400A6BFA8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F431615A2CD80B3400A6BFA8 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		F456FDAE2CE67F5500A7C32E /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		F4CCB96E2CE137A400EAE322 /* NewPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewModel.swift; sourceTree = "<group>"; };
 		F4CCB9702CE137A600EAE322 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		F4CCB9722CE137A800EAE322 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +132,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F40038F52CF24DC300092268 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F42C49942CF63AC500C93F17 /* DishCell.swift */,
+				F456FDAE2CE67F5500A7C32E /* CategoryCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F40038FB2CF3A79100092268 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				F40038FC2CF3A79E00092268 /* SideMenuViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		F43160F42CCC3BF400A6BFA8 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +171,7 @@
 				F43161592CD80B1D00A6BFA8 /* Services */,
 				F43161462CD3FE5100A6BFA8 /* Coordinators */,
 				F43161222CD02A4500A6BFA8 /* Extensions */,
+				F456FDB02CEB917F00A7C32E /* Models */,
 				F43161162CD0216500A6BFA8 /* Modules */,
 				F43161152CCC3EB500A6BFA8 /* App */,
 				F43161042CCC3BF400A6BFA8 /* ViewController.swift */,
@@ -152,6 +183,7 @@
 		F43161142CCC3E6C00A6BFA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F42A27F92CEB987800F99720 /* dishes.json */,
 				F431612F2CD2B02400A6BFA8 /* Fonts */,
 				F43161092CCC3BF500A6BFA8 /* Assets.xcassets */,
 				F431610B2CCC3BF500A6BFA8 /* LaunchScreen.storyboard */,
@@ -218,6 +250,9 @@
 		F431611A2CD021DE00A6BFA8 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				F40038FB2CF3A79100092268 /* SideMenu */,
+				F40038F52CF24DC300092268 /* Cells */,
+				F40038F72CF2511B00092268 /* MainViewModel.swift */,
 				F43161292CD02E3B00A6BFA8 /* MainViewController.swift */,
 			);
 			path = MainFlow;
@@ -310,6 +345,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		F456FDB02CEB917F00A7C32E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F42A27F42CEB928C00F99720 /* Dish.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F4CCB9692CE1373200EAE322 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +409,7 @@
 		F4E0A29D2CDE8D83006E671D /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				F40038F92CF264CF00092268 /* SearchMenuField.swift */,
 				F4E0A2A22CDFCBCB006E671D /* RegisterTextField.swift */,
 				F4E0A2A02CDE9DDC006E671D /* LogoView.swift */,
 				F4E0A29E2CDE8D96006E671D /* RollButton.swift */,
@@ -449,6 +493,7 @@
 				F431613B2CD2B04D00A6BFA8 /* Sen-ExtraBold.ttf in Resources */,
 				F431613A2CD2B04D00A6BFA8 /* Sen-Bold.ttf in Resources */,
 				F431613F2CD2B04D00A6BFA8 /* OFL.txt in Resources */,
+				F42A27FA2CEB988A00F99720 /* dishes.json in Resources */,
 				F431610D2CCC3BF500A6BFA8 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +516,7 @@
 				F431611F2CD027EF00A6BFA8 /* TabBarController.swift in Sources */,
 				F43161482CD3FE8900A6BFA8 /* AppCoordinator.swift in Sources */,
 				F4CCB9752CE137AA00EAE322 /* VerificationViewModel.swift in Sources */,
+				F40038FA2CF264CF00092268 /* SearchMenuField.swift in Sources */,
 				F4E0A29C2CDAB1D6006E671D /* SignInViewModel.swift in Sources */,
 				F431614E2CD424F800A6BFA8 /* SignInCoordinator.swift in Sources */,
 				F431615B2CD80B3400A6BFA8 /* UserStorage.swift in Sources */,
@@ -486,16 +532,20 @@
 				F4E0A2AA2CDFD01D006E671D /* NewPasswordViewController.swift in Sources */,
 				F431614C2CD41C2900A6BFA8 /* OnboardingCoordinator.swift in Sources */,
 				F43161562CD4254200A6BFA8 /* TabBarCoordinator.swift in Sources */,
+				F456FDAF2CE67F5500A7C32E /* CategoryCell.swift in Sources */,
+				F42A27F52CEB92A600F99720 /* Dish.swift in Sources */,
 				F4E0A2A82CDFCF6D006E671D /* VerificationViewController.swift in Sources */,
 				F4CCB96F2CE137A400EAE322 /* NewPasswordViewModel.swift in Sources */,
 				F43161282CD02E2A00A6BFA8 /* ProfileViewController.swift in Sources */,
 				F43161582CD7FB9400A6BFA8 /* OnboardingViewModel.swift in Sources */,
+				F42C49952CF63AC500C93F17 /* DishCell.swift in Sources */,
 				F4CCB9712CE137A600EAE322 /* SingUpViewModel.swift in Sources */,
 				F4E0A2A12CDE9DE5006E671D /* LogoView.swift in Sources */,
 				F43161502CD4250B00A6BFA8 /* ProfileCoordinator.swift in Sources */,
 				F4CCB9732CE137A800EAE322 /* ForgotPasswordViewModel.swift in Sources */,
 				F4E0A2A32CDFCBCB006E671D /* RegisterTextField.swift in Sources */,
 				F4E0A2AC2CDFD06E006E671D /* SignUpViewController.swift in Sources */,
+				F40038F82CF2512600092268 /* MainViewModel.swift in Sources */,
 				F43161242CD02B1900A6BFA8 /* UIColor+HEX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +695,7 @@
 				INFOPLIST_FILE = Rollen/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -677,6 +728,7 @@
 				INFOPLIST_FILE = Rollen/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
