@@ -10,6 +10,8 @@ import UIKit
 class MainMenuViewController: UIViewController {
     
     var viewModel = MainViewModel()
+    private var isShowingDishes = false
+    private var selectedDishType: String? = nil
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -27,7 +29,7 @@ class MainMenuViewController: UIViewController {
         let element = UILabel()
         element.text = "Еда, приготовленная с любовью!"
         element.textAlignment = .center
-        element.textColor = AppColors.Red.light
+        element.textColor = AppColors.Blue.light
         element.font = .boldSystemFont(ofSize: 17)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -76,44 +78,42 @@ class MainMenuViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = AppColors.MainMenuBackgroundColor
         collectionView.register(CategoryCell.self, forCellWithReuseIdentifier: String(describing: CategoryCell.self))
+        collectionView.register(DishCell.self, forCellWithReuseIdentifier: String(describing: DishCell.self))
     }
     
     func addAction() {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageName.sideMenuButtonImage),
-                                                               style: .done,
-                                                               target: self,
-                                                               action: #selector(selectMenuTapped))
-            
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageName.sideMenuButtonImage),
+                                                           style: .done,
+                                                           target: self,
+                                                           action: #selector(selectMenuTapped))
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "basket"),
                                                             style: .done,
                                                             target: self,
                                                             action: #selector(selectBasketTapped))
-            
+        
         goToTopButton.addTarget(self, action: #selector(goToTop), for: .touchUpInside)
-        }
+    }
+    
+    @objc func goToTop() {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
+    @objc func selectMenuTapped() {
+        showSideMenu()
+    }
+    
+    @objc func selectBasketTapped() {
+        print("basket pressed")
+        tabBarController?.selectedIndex = 0
         
-        @objc func goToTop() {
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            collectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        }
-        
-        @objc func selectMenuTapped() {
-            print("tapped")
-            showSideMenu()
-            //delegate?.didSelectMenuItem()
-        }
-        
-        @objc func selectBasketTapped() {
-            print("basket pressed")
-            tabBarController?.selectedIndex = 0
-            
-        }
+    }
     func configureScrollView() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsVerticalScrollIndicator = true
@@ -121,6 +121,29 @@ class MainMenuViewController: UIViewController {
         scrollView.backgroundColor = AppColors.tabbarBackground
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = AppColors.tabbarBackground
+    }
+    
+    private func updateContent() {
+        if isShowingDishes, let dishType = selectedDishType {
+            topLabel.text = dishType
+            titleLabel.text = "Выберите блюдо"
+            viewModel.filterDishes(by: dishType)
+        } else {
+            topLabel.text = "Menu"
+            titleLabel.text = "Еда, приготовленная с любовью!"
+            viewModel.filteredDishes = []
+        }
+        collectionView.reloadData()
+    }
+    
+    @objc private func backToDishTypes() {
+        isShowingDishes = false
+        selectedDishType = nil
+        updateContent()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: ImageName.sideMenuButtonImage),
+                                                           style: .done,
+                                                           target: self,
+                                                           action: #selector(selectMenuTapped))
     }
     
 }
@@ -143,26 +166,43 @@ extension MainMenuViewController: SideMenuViewControllerDelegate {
 
 extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.dishTypeArray.count
+        return isShowingDishes ? viewModel.filteredDishes.count : viewModel.dishTypeArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCell.self), for: indexPath) as! CategoryCell
-        cell.configure(with: viewModel.dishTypeArray[indexPath.item])
-        cell.backgroundColor = AppColors.MainMenuCellBackgroundColor
-        return cell }
+        if isShowingDishes {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: DishCell.self), for: indexPath) as! DishCell
+            cell.configure(with: viewModel.filteredDishes[indexPath.item])
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCell.self), for: indexPath) as! CategoryCell
+            cell.configure(with: viewModel.dishTypeArray[indexPath.item])
+            return cell
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width
-        return CGSize(width: width, height: width * 0.7)
+        let width = collectionView.frame.width - collectionView.contentInset.left - collectionView.contentInset.right
+        if isShowingDishes {
+            return CGSize(width: width, height: width * 0.4)
+        } else {
+            return CGSize(width: width, height: width * 0.7)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let dishType = viewModel.dishTypeArray[indexPath.item]
-        viewModel.filterDishes(by: dishType.dishTypeName)
-        let dishesVC = DishesViewController()
-        dishesVC.dishes = viewModel.filteredDishes
-        navigationController?.pushViewController(dishesVC, animated: true) }
+        if isShowingDishes {
+            let selectedDish = viewModel.filteredDishes[indexPath.item]
+            OrderStorage.shared.addDish(selectedDish)
+            print("Added \(selectedDish.name) to order.")
+        } else {
+            let dishType = viewModel.dishTypeArray[indexPath.item]
+            selectedDishType = dishType.dishTypeName
+            isShowingDishes = true
+            updateContent()
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backToDishTypes))
+        }
+    }
 }
 
 //MARK: - Show SideMenu
