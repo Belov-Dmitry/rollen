@@ -27,7 +27,7 @@ class MainViewModel: MainFinishDelegate {
     init(coordinator: MainCoordinator? = nil) {
         self.coordinator = coordinator
         makeDishTypeArray()
-        
+        loadDishes()
     }
     
     func mainFinish() {
@@ -43,14 +43,15 @@ class MainViewModel: MainFinishDelegate {
     }
     
     func filterDishes(by type: String) {
-        filteredDishes = dishes.filter { $0.type == type
-        }
+        filteredDishes = dishes.filter { $0.type == type }
+        print("filterDishes by type: \(type)")
+        print("filteredDishes count: \(filteredDishes.count)")
     }
     
     func makeDishTypeArray() {
             dishTypeArray = [
                 DishType(dishTypeName: "Холодные роллы", dishTypeImage: UIImage(named: "060")!),
-                DishType(dishTypeName: "Запечённые роллы", dishTypeImage: UIImage(named: "056")!),
+                DishType(dishTypeName: "Запеченные роллы", dishTypeImage: UIImage(named: "056")!),
                 DishType(dishTypeName: "Темпура роллы", dishTypeImage: UIImage(named: "031")!),
                 DishType(dishTypeName: "Сеты", dishTypeImage: UIImage(named: "083")!),
                 DishType(dishTypeName: "Суши", dishTypeImage: UIImage(named: "023")!),

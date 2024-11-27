@@ -18,6 +18,11 @@ enum AppColors {
     static let MainMenuBackgroundColor = AppColors.Blue.dark
     static let MainMenuCellBackgroundColor = AppColors.Blue.medium
     static let MainMenuHeaderCellColor = AppColors.Red.light
+    static let dishesNameColor = AppColors.Red.light
+    static let dishesPriceColor = AppColors.Yellow.dark
+    static let dishesPriceBackgroundColor = AppColors.Blue.light
+    static let dishesIngredientsColor = AppColors.Yellow.light
+    static let dishesWeightColor = AppColors.Red.light
     
     enum Blue {
         static let dark = UIColor(hex: "013145")  // Background

@@ -21,7 +21,7 @@ class SearchMenuField: UITextField {
         layer.cornerRadius = 24
         backgroundColor = AppColors.Red.lightTransparent
         layer.borderWidth = 2
-        layer.borderColor = AppColors.Red.light.cgColor
+        layer.borderColor = AppColors.Blue.light.cgColor
         font = .boldSystemFont(ofSize: 16)
         heightAnchor.constraint(equalToConstant: 50).isActive = true
         translatesAutoresizingMaskIntoConstraints = false
