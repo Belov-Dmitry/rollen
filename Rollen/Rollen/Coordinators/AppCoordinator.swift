@@ -13,11 +13,11 @@ class AppCoordinator: Coordinator {
     private let factory = ModuleFactory.self
     
     override func start() {
-        ShowMainFlow()
+        showMainFlow()
         //showOnboardingFlow()
-        //ShowSignInFlow()
+        //showSignInFlow()
 //        if userStorage.isOnboardingComplete {
-//            ShowMainFlow()
+//            showMainFlow()
 //        } else {
 //            showOnboardingFlow()
 //        }
@@ -31,11 +31,11 @@ private extension AppCoordinator {
         factory.makeOnboardingFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
         
     }
-    func ShowSignInFlow() {
+    func showSignInFlow() {
         guard let navigationController = navigationController else { return }
         factory.makeSignInFlow(coordinator: self, finishDelegate: self, navigationController: navigationController)
     }
-    func ShowMainFlow() {
+    func showMainFlow() {
         guard let navigationController = navigationController else { return }
         let tabBarViewController = factory.makeMainFlow(coordinator: self, finishDelegate: self)
         navigationController.pushViewController(tabBarViewController, animated: false)
@@ -48,10 +48,10 @@ extension AppCoordinator: CoordinatorFinishDelegate {
         switch childCoordinator.type {
         case .onboarding:
             navigationController?.viewControllers.removeAll()
-            ShowSignInFlow()
+            showSignInFlow()
         case .signIn:
             navigationController?.viewControllers.removeAll()
-            ShowMainFlow()
+            showMainFlow()
         case .app:
             return
         default:

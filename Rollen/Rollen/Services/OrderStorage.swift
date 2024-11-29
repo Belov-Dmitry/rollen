@@ -12,16 +12,16 @@ class OrderStorage {
     
     private init() {}
     
-    func addDish(_ dish: Dish) {
+    func addDish(_ dish: OrderedDish) {
         if let index = orderedDishes.firstIndex(where: { $0.id == dish.id }) {
-            orderedDishes[index].quantity += 1
+            orderedDishes[index].quantity += dish.quantity
+            //orderedDishes[index].price += dish.price
         } else {
-            let orderedDish = OrderedDish(id: dish.id, name: dish.name, price: dish.price, quantity: 1)
-            orderedDishes.append(orderedDish)
+            orderedDishes.append(dish)
         }
     }
     
-    func removeDish(_ dish: Dish) {
+    func removeDish(_ dish: OrderedDish) {
         if let index = orderedDishes.firstIndex(where: { $0.id == dish.id }) {
             orderedDishes[index].quantity -= 1
             if orderedDishes[index].quantity == 0 {
@@ -34,3 +34,4 @@ class OrderStorage {
         orderedDishes.removeAll()
     }
 }
+

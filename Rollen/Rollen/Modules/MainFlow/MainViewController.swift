@@ -193,8 +193,11 @@ extension MainMenuViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if isShowingDishes {
             let selectedDish = viewModel.filteredDishes[indexPath.item]
-            OrderStorage.shared.addDish(selectedDish)
-            print("Added \(selectedDish.name) to order.")
+            let detailsViewModel = DetailsViewModel(dish: selectedDish)
+            let detailsViewController = DetailsViewController(viewModel: detailsViewModel)
+            detailsViewController.modalPresentationStyle = .overFullScreen
+            detailsViewController.modalTransitionStyle = .crossDissolve
+            present(detailsViewController, animated: true, completion: nil)
         } else {
             let dishType = viewModel.dishTypeArray[indexPath.item]
             selectedDishType = dishType.dishTypeName

@@ -11,7 +11,8 @@ enum UserDefaultsKey {
 enum ImageName {
     static let logo = "LogoCircle"
     static let sideMenuButtonImage = "sideMenuButtonImage"
-    static let busketButtonImage = "busketButtonImage"
+    static let basketButtonImage = "basketButtonImage"
+    static let backButtonImage = "backButtonImage"
     static let close = "close"
     
     static let menuProfile = "profile"
