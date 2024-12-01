@@ -30,12 +30,12 @@ class DetailsViewModel {
     }
     
     func addDishToOrder(quantity: Int) {
-        var dishToAdd = OrderedDish(id: selectedDish.id, name: selectedDish.name, price: selectedDish.price, quantity: quantity)
+        var dishToAdd = OrderedDish(id: selectedDish.id, name: selectedDish.name, imagename: selectedDish.imagename, price: selectedDish.price, quantity: quantity)
         
         //TODO: addd addons
-//        selectedAddOns.forEach { addOn in
-//            dishToAdd.price += addOn.price
-//        }
+        selectedAddOns.forEach { addOn in
+            dishToAdd.price += addOn.price
+        }
         
         OrderStorage.shared.addDish(dishToAdd)
     }

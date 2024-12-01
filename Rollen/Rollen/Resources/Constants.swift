@@ -33,9 +33,9 @@ enum ConstantsOnboarding {
 enum ConstantsSignInVC {
     static let loginTF = "Email"
     static let passwordTF = "Password"
-    static let forgotPassLabel = "Forgot Password?"
-    static let rollButton = "Eat Away!"
-    static let signUpLabel = "Sign Up"
+    static let forgotPassLabel = "Забыли пароль?"
+    static let rollButton = "Хочу есть!"
+    static let signUpLabel = "Зарегистрироваться"
 }
 enum ConstantsSignUpVC {
     static let nameTF = "Name"

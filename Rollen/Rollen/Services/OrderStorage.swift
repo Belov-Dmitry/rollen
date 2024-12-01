@@ -15,7 +15,7 @@ class OrderStorage {
     func addDish(_ dish: OrderedDish) {
         if let index = orderedDishes.firstIndex(where: { $0.id == dish.id }) {
             orderedDishes[index].quantity += dish.quantity
-            //orderedDishes[index].price += dish.price
+            orderedDishes[index].price += dish.price
         } else {
             orderedDishes.append(dish)
         }

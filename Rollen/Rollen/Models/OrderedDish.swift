@@ -9,6 +9,7 @@
 struct OrderedDish {
     let id: Int
     let name: String
-    let price: Int
+    let imagename: String
+    var price: Int
     var quantity: Int
 }

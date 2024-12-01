@@ -37,7 +37,7 @@ class RollButton: UIButton {
         var fontSize: CGFloat {
             switch self {
             case .small:
-                return 14
+                return 20
             case .large:
                 return 16
             case .square:
